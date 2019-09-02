@@ -1,0 +1,7 @@
+#!/bin/bash
+MY_IP=`ifconfig en0 | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | grep -v 127 | grep -v 255`
+echo "Setting cluter IP to:  $MY_IP"
+export MY_IP=$MY_IP
+./stop
+./clean
+docker-compose up -d 

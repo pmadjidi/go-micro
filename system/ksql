@@ -1,0 +1,5 @@
+docker run -d  -p 127.0.0.1:8088:8088 -e KSQL_BOOTSTRAP_SERVERS=172.16.42.109:9092  -e KSQL_LISTENERS=http://0.0.0.0:8088 \
+  -e KSQL_KSQL_SERVICE_ID=ksql_service_3_ \
+  -e KSQL_PRODUCER_INTERCEPTOR_CLASSES=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor \
+  -e KSQL_CONSUMER_INTERCEPTOR_CLASSES=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor \
+  confluentinc/cp-ksql-server:5.2.1
